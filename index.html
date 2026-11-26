@@ -1,5 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh"><head><meta charset="utf-8">
+<!--
+  DEAD PRECINCT · 亡城警署 — PS1-style retro survival-horror browser game demo
+  Copyright (c) 2026 Bao5ye — https://github.com/Bao5ye/dead-precinct
+  Made by a human with Claude (Fable 5.2 / Opus 5.5). Non-commercial fan tribute; all characters, monsters and music are original.
+
+  MIT License
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+-->
+<html lang="zh"><head><meta charset="utf-8"><meta name="author" content="Bao5ye"><meta name="copyright" content="(c) 2026 Bao5ye · MIT License · github.com/Bao5ye/dead-precinct">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <title>亡城警署 DEAD PRECINCT</title>
 <style>
@@ -514,7 +539,9 @@ const S={
   if(ac&&trk!='dread')music('dread');human({x:0,z:0,a:Math.sin(tm*.5)*.45,ph:0},HK,{arms:-.1});grain();draw3([0,1.8,1.35],[0,1.8,0],[-.7,1.9,1.2],[1.5,1.25,1.05],[.9,2.1,-.9],[3,.25,.15],[.05,.05,.07],[2,8],[0,0,0]);
   const j=rnd()<.04?2:0;tx('DEAD PRECINCT',160+j,78,'#400',31,'center','Georgia,serif');tx('DEAD PRECINCT',159+j,76,'#c11',31,'center','Georgia,serif');
   tx('亡 城 警 署',160,100,'#ccc',14,'center');if(tm*2&1)tx(touch?'按 ✕ 开始':'PRESS ENTER / J',160,214,'#eee',12,'center');
-  tx('SURVIVAL HORROR DEMO · 本游戏含有暴力与恐怖场面',160,234,'#666',8,'center');
+  hx.fillStyle='rgba(0,0,0,.7)';hx.fillRect(0,218,W,22);
+  tx('© 2026 Bao5ye · github.com/Bao5ye/dead-precinct · MIT',160,225,'#8a8a8a',7,'center');
+  tx('SURVIVAL HORROR DEMO · 本游戏含有暴力与恐怖场面',160,236,'#666',7,'center');
   if(Pk.act){try{const s=new SpeechSynthesisUtterance('Dead Precinct');s.lang='en-US';s.pitch=.1;s.rate=.6;speechSynthesis.speak(s)}catch(e){}sfx.slam();state='intro';st=0}},
  intro(){gl.clearColor(0,0,0,1);gl.clear(16640);
   const done=typed(wrap('199X年，深秋。灰港市。\n\n一种未知的病毒，三天内吞没了整座城市。\n新人巡警林岚，在失联的街头独自醒来。\n\n无线电里只剩最后一句话——\n「所有幸存者……到警署地下车库……」'),st*.6,22,50,'#bbb');
